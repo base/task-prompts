@@ -14,11 +14,15 @@ module.exports = function(app, config) {
   var options = extend({save: false}, config);
   var utils = {};
 
+  if (typeof app.task !== 'function') {
+    throw new Error('expected base-task to be registered');
+  }
+
   utils.confirm = function(msg, yes, no) {
     return function(cb) {
       if (typeof app.ask !== 'function') {
         cb(new Error('expected base-questions to be registered'));
-        return
+        return;
       }
 
       var build = app.build.bind(app);
