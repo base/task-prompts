@@ -10,18 +10,18 @@ var data = require('base-data');
 var cwd = require('base-cwd');
 var Base = require('base');
 var prompts = require('./');
-var app, ask;
+var app, prompt;
 
 describe('base-task-prompts', function() {
   this.timeout(20000);
 
   beforeEach(function() {
     app = new Base();
-    ask = prompts(app);
     app.use(data());
     app.use(store());
     app.use(questions());
     app.use(task());
+    prompt = prompts(app);
   });
 
   describe('utils', function() {
@@ -30,12 +30,12 @@ describe('base-task-prompts', function() {
     });
 
     it('should expose an object', function() {
-      assert(ask);
-      assert.equal(typeof ask, 'object');
+      assert(prompt);
+      assert.equal(typeof prompt, 'object');
     });
 
     it('should expose a .confirm method', function() {
-      assert.equal(typeof ask.confirm, 'function');
+      assert.equal(typeof prompt.confirm, 'function');
     });
   });
 
@@ -51,7 +51,7 @@ describe('base-task-prompts', function() {
         next();
       });
 
-      app.task('default', ask.confirm('foo', ['a'], ['b']));
+      app.task('default', prompt.confirm('foo', ['a'], ['b']));
       app.build(function(err) {
         if (err) return cb(err);
         assert.equal(count, 1);
