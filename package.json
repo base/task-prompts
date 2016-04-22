@@ -1,12 +1,12 @@
 {
-  "name": "base-task-prompts",
-  "description": "Utils for using prompts to conditionally run tasks. Requires the base-task and base-questions plugins.",
+  "name": "task-prompts",
+  "description": "User prompts for conditionally running tasks.",
   "version": "0.1.0",
-  "homepage": "https://github.com/node-base/base-task-prompts",
+  "homepage": "https://github.com/node-base/task-prompts",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "node-base/base-task-prompts",
+  "repository": "node-base/task-prompts",
   "bugs": {
-    "url": "https://github.com/node-base/base-task-prompts/issues"
+    "url": "https://github.com/node-base/task-prompts/issues"
   },
   "license": "MIT",
   "files": [
@@ -26,12 +26,13 @@
   "devDependencies": {
     "base": "^0.8.1",
     "base-cwd": "^0.1.6",
-    "base-data": "^0.4.0",
+    "base-data": "^0.4.4",
+    "base-npm": "^0.2.2",
     "base-project": "^0.1.3",
-    "base-questions": "^0.5.5",
+    "base-questions": "^0.6.0",
     "base-store": "^0.4.2",
-    "base-task": "^0.4.2",
-    "gulp-format-md": "^0.1.7",
+    "base-task": "^0.4.3",
+    "gulp-format-md": "^0.1.8",
     "mocha": "^2.4.5"
   },
   "keywords": [
@@ -51,6 +52,8 @@
     ],
     "reflinks": [
       "base-npm",
+      "base-questions",
+      "base-task",
       "verb"
     ],
     "lint": {
